@@ -1,0 +1,14 @@
+a = int(input("Введите трех значное число: "))
+if a < 99 or a > 1000:
+    print("Пожалуста введите трех значное число")
+else:
+    a = str(a)
+    b = list (a)
+    print(b)
+    sum1 = int(b[0])
+    sum2 = int(b[1])
+    sum3 = int(b[2])
+    sum = sum1 + sum2 + sum3
+    print(sum)
+    mul = sum1 * sum2 * sum3
+    print(mul)
