@@ -1,5 +1,5 @@
 m = 5
-n = 5
+n = 4
 a = []
 num = 0
 for i in range(n):
