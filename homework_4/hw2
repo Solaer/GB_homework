@@ -1,0 +1,16 @@
+length = int(input())
+i = 1
+num = []
+while i < length:
+    i += 1
+    num.append(i)
+j = 2
+for i in range(len(num)):
+    j = 2
+    while j < len(num):
+        try:
+            num.remove(num[i]*j)
+        except:
+            pass
+        j += 1
+print(num)
