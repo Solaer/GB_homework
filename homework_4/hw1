@@ -1,0 +1,41 @@
+import cProfile
+import timeit
+
+
+def retern(num):
+    mun = 0
+    mun = str(mun)
+    over = 0
+    i = 1
+    lenght = len(num)
+    while len(mun) < lenght:
+        over = int(num) // (10 ** (lenght - i))
+        num = int(num) - (over * (10 ** (lenght - i)))
+        num = str(num)
+        mun = over * (10 ** (i - 1)) + int(mun)
+        mun = str(mun)
+        i += 1
+
+
+def retern1(num):
+    num = list(num)
+    mun = []
+    over = 0
+    i = 1
+    while i < (len(num) + 1):
+        mun.append(num[len(num) - i])
+        i += 1
+
+
+print(cProfile.run('retern("123" * 1000)'))#Скорость выполнения функции retern по cProfile составила: 0.534
+print(cProfile.run('retern1("123" * 1000)'))#Скорость вполнения функции retern1 по cProfile составила: 0.002
+print()
+print(timeit.timeit('retern("123")', 'from __main__ import retern'))#Скорость выполнения функции retern по timeit составила: 3.2226953000000003
+print(timeit.timeit('retern1("123")', 'from __main__ import retern1'))#Скорость выполнения функции retern1 по timeit составила: 0.6066041000000002
+
+"""
+Примечание: Задание как по мне не очень понятно, но надеюсь все сделал правильно.
+
+Вывод: Массивы показали свою эффективность т.к. количество действий было сведено к минимуму, и как следствие затраты 
+времени и ресурсов компьютера тоже. Ч.Т.Д.
+"""
