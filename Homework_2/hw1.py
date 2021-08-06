@@ -16,7 +16,7 @@ def calculatid (num1, num2, doit):
 while True:
     num1 = int(input("Введите первое число: "))
     doit = input("Введите действие: ")
-    if  doit != "+" and doit != "-" and doit != "*" and doit != "/":
+    if  doit != "+" and doit != "-" and doit != "*" and doit != "/" and doit != "0":
         print("Невозможно выполнить действие")
         continue
     if doit == "0":
